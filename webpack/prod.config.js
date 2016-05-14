@@ -19,7 +19,8 @@ module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: {
     'main': [
-      './src/client.js'
+      './src/client.js',
+      './src/theme/bootstrap.config.prod.js'
     ]
   },
   output: {
