@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { IndexLink } from 'react-router';
+import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-connect';
-import { Drawer } from 'material-ui';
+import Drawer from 'material-ui/Drawer';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed for onTouchTap
@@ -34,17 +36,52 @@ export default class App extends Component {
     pushState: PropTypes.func.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: true
+    }
+  }
+
   render() {
     const {user} = this.props;
     const styles = require('./App.scss');
+    const logo = require('./logo.svg');
+
+    const NavLink = (props) => {
+      return (
+        <Link activeClassName={styles.activeDrawerLink} to={props.to}>{props.text}</Link>
+      );
+    }
 
     return (
-      <div className={styles.app}>
-        <Helmet {...config.app.head}/>
-        <div className={styles.appContent}>
-          {this.props.children}
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <div className={styles.app}>
+          <Helmet {...config.app.head}/>
+          <Drawer
+            docked={false}
+            width={400}
+            open={this.state.open}
+            zDepth={0}
+            containerStyle={{backgroundColor: '#fefffa'}}
+            containerClassName={styles.drawer}
+            overlayStyle={{backgroundColor: 'none'}}
+          >
+          <div className={styles.drawerContent}>
+            <div className={styles.drawerLogo}>
+              <img src={logo} alt="KATAKANA" />
+            </div>
+            <ul className={styles.nav}>
+              <li><NavLink to="/" text="Home" /></li>
+              <li><NavLink to="/about" text="About" /></li>
+            </ul>
+          </div>
+          </Drawer>
+          <div className={styles.appContent}>
+            {this.props.children}
+          </div>
         </div>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }
