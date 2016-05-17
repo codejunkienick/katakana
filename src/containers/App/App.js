@@ -5,6 +5,13 @@ import Helmet from 'react-helmet';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-connect';
+import { Drawer } from 'material-ui';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// Check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
