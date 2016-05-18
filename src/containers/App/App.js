@@ -72,10 +72,11 @@ export default class App extends Component {
               <img src={logo} alt="KATAKANA" />
             </div>
             <ul className={styles.nav}>
-              <li><NavLink to="/" text="Blog" /></li>
+              <li><NavLink to="/blog" text="Blog" /></li>
+              <li><NavLink to="/projects" text="Projects" /></li>
+              <li><NavLink to="/members" text="Members" /></li>
               <li><NavLink to="/about" text="About" /></li>
-              <li><NavLink to="/about" text="Contact" /></li>
-              <li><NavLink to="/about" text="Projects" /></li>
+              <li><NavLink to="/contact" text="Contact" /></li>
             </ul>
             <div className={styles.drawerFooter}>
               Developer group <br />

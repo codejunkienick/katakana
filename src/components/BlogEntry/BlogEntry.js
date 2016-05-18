@@ -7,7 +7,7 @@ export default class BlogEntry extends Component {
     return (
         <div className={styles.entry}>
           <div className={styles.header}>
-            <h3 className={styles.title}>{this.props.title}</h3>
+            <h2 className={styles.title}>{this.props.title}</h2>
             <div className={styles.meta}>
               <span className={styles.date}>{this.props.date}</span>
               <a className={styles.author} href={this.props.authorLink}>@<span>{this.props.author}</span></a>

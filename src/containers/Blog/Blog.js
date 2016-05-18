@@ -15,7 +15,7 @@ export default class Home extends Component {
           author="codejunkienick"
           authorLink="http://codejunkienick.github.io"
           date="16-05-2016 09:22">
-          <p>
+          <p style={{fontStyle: 'italic'}}>
             Consectetur nesciunt nobis dolorem placeat maxime quod atque temporibus, numquam perspiciatis impedit amet voluptate fuga esse pariatur atque assumenda voluptatem sed aspernatur sequi possimus quis. Ex suscipit iure placeat officiis!
           </p>
           <p>

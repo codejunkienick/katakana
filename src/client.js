@@ -12,8 +12,12 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { ReduxAsyncConnect } from 'redux-connect';
 import useScroll from 'scroll-behavior/lib/useStandardScroll';
-
 import getRoutes from './routes';
+
+/*
+ * Fonts
+ */
+require('./theme/fonts/lato/scss/lato.scss');
 
 const client = new ApiClient();
 const _browserHistory = useScroll(() => browserHistory)();
