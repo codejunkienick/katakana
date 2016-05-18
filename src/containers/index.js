@@ -1,4 +1,4 @@
 export App from './App/App';
-export Home from './Home/Home';
+export Blog from './Blog/Blog';
 export About from './About/About';
 export NotFound from './NotFound/NotFound';

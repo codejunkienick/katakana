@@ -3,7 +3,7 @@ import {IndexRoute, Route} from 'react-router';
 import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 import {
     App,
-    Home,
+    Blog,
     About,
     NotFound,
   } from 'containers';
@@ -31,8 +31,8 @@ export default (store) => {
    */
   return (
     <Route path="/" component={App}>
-      { /* Home (main) route */ }
-      <IndexRoute component={Home}/>
+      { /* Blog (main) route */ }
+      <IndexRoute component={Blog}/>
 
       { /* Routes */ }
       <Route path="about" component={About}/>
