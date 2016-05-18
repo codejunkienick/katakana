@@ -1,0 +1,25 @@
+.title {
+  color: #646262;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.meta {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+.date {
+  display: inline-block;
+  margin-right: 4px;
+  color: #646262;
+  font-style: italic;
+}
+
+.author {
+  font-style: italic;
+  color: #555;
+  text-decoration: none;
+  span {
+    text-decoration: underline;
+  }
+}

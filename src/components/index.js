@@ -5,3 +5,5 @@
  *
  */
 
+export BlogEntry from './BlogEntry/BlogEntry.js';
+
