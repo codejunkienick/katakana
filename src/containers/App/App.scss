@@ -3,6 +3,7 @@
 .appContent {
   margin-top: 56px;
   margin-left: (400 + 48) + px;
+  max-width: 800px;
 }
 
 html {font-size: 1.125em;}
@@ -12,7 +13,7 @@ body {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   line-height: 1.45;
-  color: #333;
+  color: #4d4d4d;
 }
 
 p {margin-bottom: 1.3em;}
@@ -36,17 +37,23 @@ h4 {font-size: 1.618em;}
 
 small, .font_small {font-size: 0.618em;}
 
+$drawer-font-family: 'Anonymous Pro', 'sans-serif';
 
 .drawer {
   border-right: 3px solid #e2e4e0;
   background: #fefffa;
-  font-family: 'Anonymous Pro', 'sans-serif';
+  font-family: $drawer-font-family;
+}
+.drawerContent {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .drawerLogo {
   margin: 50px 68px;
 }
-
 
 .activeDrawerLink:before,
 .nav a:hover::before {
@@ -56,26 +63,36 @@ small, .font_small {font-size: 0.618em;}
   left: -20px;
   top: -6px;
   font-size: 22px;
-  font-family: 'Anonymous Pro', 'sans-serif';
+  font-family: $drawer-font-family;
 }
 
 .nav {
   margin-left: 86px;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 
   a:hover {
     color: #222;
-    border-bottom: 2px solid #222;
   }
   a {
     position: relative;
     color: #666;
     text-decoration: none;
     font-size: 22px;
-    font-family: 'Anonymous Pro', 'sans-serif';
+    font-family: $drawer-font-family;
   }
   li {
     margin-bottom: 32px;
   }
+}
+
+.drawerFooter {
+  display: flex;
+  font-family: $drawer-font-family;
+  font-size: 20px;
+  margin: 0 0 28px 33px;
+  color: #666;
 }

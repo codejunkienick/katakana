@@ -65,16 +65,22 @@ export default class App extends Component {
             zDepth={0}
             containerStyle={{backgroundColor: '#fefffa'}}
             containerClassName={styles.drawer}
-            overlayStyle={{backgroundColor: 'none'}}
+            docked={true}
           >
           <div className={styles.drawerContent}>
             <div className={styles.drawerLogo}>
               <img src={logo} alt="KATAKANA" />
             </div>
             <ul className={styles.nav}>
-              <li><NavLink to="/" text="Home" /></li>
+              <li><NavLink to="/" text="Blog" /></li>
               <li><NavLink to="/about" text="About" /></li>
+              <li><NavLink to="/about" text="Contact" /></li>
+              <li><NavLink to="/about" text="Projects" /></li>
             </ul>
+            <div className={styles.drawerFooter}>
+              Developer group <br />
+              based in Perm, Russia
+            </div>
           </div>
           </Drawer>
           <div className={styles.appContent}>
