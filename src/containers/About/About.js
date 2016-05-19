@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 
 export default class About extends Component {
@@ -14,7 +15,7 @@ export default class About extends Component {
             <span>Katakana</span> &mdash; это группа людей, объединенная желанием создавать значимые и полезные для людей приложения, группа разработичков, которая может в краткие сроки создавать простые и качественные решения с помощью передовых технологий.
           </p>
           <p>
-            Если у вас есть проект для нас, вы можете обратиться к нам через контактную форму или лично к любому из действующего состава. 
+              Если у вас есть проект для нас, вы можете обратиться к нам c помощью <Link to="/contact">контактных данных</Link> или лично к любому из действующего состава. 
           </p>
         </div>
       </div>
