@@ -7,7 +7,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
-        <h2 className="page-title">Projects</h2>
+        <h2 className="page-title">Проекты</h2>
         <p>KATAKANA is a lorem ipsum</p>
       </div>
     );

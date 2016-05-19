@@ -79,7 +79,7 @@ export default class App extends Component {
               <li><NavLink to="/contact" text="Связаться" /></li>
             </ul>
             <div className={styles.drawerFooter}>
-              Группа разработчиков <br />
+              Группа разработчиков, <br />
               расположенная в Перми.
             </div>
           </div>

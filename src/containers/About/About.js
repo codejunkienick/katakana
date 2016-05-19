@@ -6,7 +6,7 @@ export default class About extends Component {
     const styles = require('./About.scss');
     return (
       <div>
-        <h2 className="page-title">About</h2>
+        <h2 className="page-title">О нас</h2>
         <div className={styles.content}>
           <p>
             <span>Katakana</span> &mdash; это не студия и не компания, мы не являемся товарным знаком или брендом.</p>
