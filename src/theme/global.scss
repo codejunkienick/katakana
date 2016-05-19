@@ -1,0 +1,48 @@
+html {font-size: 1.125em;}
+
+body {
+  background-color: rgb(253, 253, 253);
+  font-weight: 400;
+  line-height: 1.45;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, serif;
+  color: #4d4d4d;
+}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, serif;
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2.827em;
+}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+a {
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(100,100,100,0.3);
+  &:hover,
+  &:active,
+  &:focus {
+    color: #1c701b;
+    border-color: #1c701b;
+  }
+}
+
+.page-title {
+  color: rgba(77, 77, 77, 0.5);
+}

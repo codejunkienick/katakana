@@ -2,6 +2,7 @@
   color: #646262;
   margin-top: 0;
   margin-bottom: 12px;
+  font-size: 2.35em;
 }
 
 .meta {
@@ -16,15 +17,18 @@
 }
 
 .author {
+  border:none;
+  span {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(100,100,100,0.3);
+  }
   font-style: italic;
   color: #555;
   text-decoration: none;
   &:hover,
   &:active,
   &:focus {
-    color: #1C701B;
-    span {
-      text-decoration: underline;
-    }
+    color: #1c701b;
   }
 }
