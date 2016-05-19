@@ -7,9 +7,9 @@ export default class About extends Component {
   render() {
     return (
       <div>
-        <h2 className="page-title">Contact</h2>
+        <h2 className="page-title">Связаться</h2>
         <p>
-          our email: <a href="mailto:mail@katakana.xyz">mail@katakana.xyz</a>
+          наш email: <a href="mailto:mail@katakana.xyz">mail@katakana.xyz</a>
         </p>
       </div>
     );

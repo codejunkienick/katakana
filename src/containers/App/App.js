@@ -72,15 +72,15 @@ export default class App extends Component {
               <img src={logo} alt="KATAKANA" />
             </div>
             <ul className={styles.nav}>
-              <li><NavLink to="/blog" text="Blog" /></li>
-              <li><NavLink to="/projects" text="Projects" /></li>
-              <li><NavLink to="/members" text="Members" /></li>
-              <li><NavLink to="/about" text="About" /></li>
-              <li><NavLink to="/contact" text="Contact" /></li>
+              <li><NavLink to="/blog" text="Блог" /></li>
+              <li><NavLink to="/projects" text="Проекты" /></li>
+              <li><NavLink to="/members" text="Состав" /></li>
+              <li><NavLink to="/about" text="О нас" /></li>
+              <li><NavLink to="/contact" text="Связаться" /></li>
             </ul>
             <div className={styles.drawerFooter}>
-              Developer group <br />
-              based in Perm, Russia
+              Группа разработчиков <br />
+              расположенная в Перми.
             </div>
           </div>
           </Drawer>

@@ -6,7 +6,7 @@ export default class About extends Component {
     const styles = require('./Members.scss');
     return (
       <div>
-        <h2>Members</h2>
+        <h2 className="page-title">Members</h2>
         <div className={styles.member}>
         </div>
       </div>
