@@ -9,6 +9,7 @@ import Drawer from 'material-ui/Drawer';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { RouteTransition, presets } from 'react-router-transition';
 
 // Needed for onTouchTap
 // Check this repo:
@@ -84,9 +85,15 @@ export default class App extends Component {
             </div>
           </div>
           </Drawer>
+          <RouteTransition
+            pathname={this.props.location.pathname}
+            runOnMount={false}
+            {...presets.fade}
+            >
           <div className={styles.appContent}>
             {this.props.children}
           </div>
+        </RouteTransition>
         </div>
       </MuiThemeProvider>
     );
