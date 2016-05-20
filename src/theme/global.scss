@@ -10,11 +10,14 @@ body {
 
 p {margin-bottom: 1.3em;}
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, serif;
-  margin: 1.414em 0 0.5em;
   font-weight: inherit;
   line-height: 1.2;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
 }
 
 h1 {
@@ -30,6 +33,10 @@ h2 {
 h3 {font-size: 1.999em;}
 
 h4 {font-size: 1.414em;}
+
+h5 {font-size: 20px;}
+
+h6 {font-size: 18px;}
 
 a {
   color: #555;
