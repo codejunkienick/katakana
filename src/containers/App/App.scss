@@ -32,9 +32,9 @@ $drawer-font-family: monospace;
   content: '>';
   display: inline-block;
   position: absolute;
-  left: -20px;
-  top: -5px;
-  font-size: 20px;
+  left: -18px;
+  top: -2px;
+  font-size: 17px;
   font-family: $drawer-font-family;
 }
 
@@ -65,7 +65,7 @@ $drawer-font-family: monospace;
 .drawerFooter {
   display: flex;
   font-family: $drawer-font-family;
-  font-size: 20px;
+  font-size: 16px;
   margin: 0 0 28px 33px;
   color: #666;
 }
