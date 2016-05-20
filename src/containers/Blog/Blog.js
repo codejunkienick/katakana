@@ -9,7 +9,7 @@ export default class Home extends Component {
     const styles = require('./Blog.scss');
     return (
       <div className={styles.home}>
-        <Helmet title="Blog"/>
+        <Helmet title="Блог"/>
         <BlogEntry
           title="News example title"
           author="codejunkienick"

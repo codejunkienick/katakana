@@ -7,6 +7,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
+        <Helmet title="Связаться"/>
         <h2 className="page-title">Связаться</h2>
         <p style={{lineHeight: '2.2'}}>
           email: <a href="mailto:mail@katakana.xyz">mail@katakana.xyz</a><br/>
