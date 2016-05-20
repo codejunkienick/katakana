@@ -13,10 +13,10 @@ export default class About extends Component {
             <div className={styles.memberCol}>
               <p>
                 <span>(связаться)</span><br />
-                website: <a href="http://codejunkienick.github.io">codejunkienick.gihub.io</a><br />
-                gihub: <a href="http://github.com/codejunkienick">@codejunkienick</a><br/>
-                messenger: <a href="">telegram</a><br/>
                 mail: <a href="mailto:nickpoteryaev@gmail.com">nickpoteryaev@gmail.com</a><br/>
+                website: <a href="http://codejunkienick.github.io">codejunkienick.gihub.io</a><br />
+                messenger: <a href="http://telegram.me/codejunkienick">telegram</a><br/>
+                gihub: <a href="http://github.com/codejunkienick">@codejunkienick</a><br/>
                 social: <a href="http://vk.com/codejunkienick">vk</a><br/>
               </p>
             </div>
@@ -44,9 +44,16 @@ export default class About extends Component {
             <div className={styles.memberCol}>
               <p>
                 <span>(связаться)</span><br />
-                behance: <br />
-                mail:
-                telegram:
+                mail: <a href="mailto:igorlem@icloud.com">igorlem@icloud.com</a><br/>
+                behance: <a href="http://behance.net/igorlem">behance.net/igorlem</a><br />
+                messenger: <a href="http://telegram.me/igorlem">telegram</a><br/>
+              </p>
+            </div>
+            <div className={styles.memberCol}>
+              <p>
+                <span>(технологии)</span><br />
+                Adobe Ilustrator<br/>
+                Sketch<br/>
               </p>
             </div>
             <div className={styles.memberCol}>
