@@ -5,7 +5,9 @@ import Helmet from 'react-helmet';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-connect';
-import Drawer from 'material-ui/Drawer';
+import { Drawer, AppBar, IconButton } from 'material-ui';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -37,11 +39,28 @@ export default class App extends Component {
     pushState: PropTypes.func.isRequired
   };
 
+  shouldOpenDrawer(windowWidth) {
+    return windowWidth > 800;
+  }
+
   constructor(props) {
     super(props);
     this.state = {
-      open: true
+      openDrawer: false
     }
+
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.draw); 
+    this.setState({openDrawer: this.shouldOpenDrawer(window.innerWidth)})
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.draw); 
+  }
+
+  draw = () => {
+    this.setState({openDrawer: this.shouldOpenDrawer(window.innerWidth)})
   }
 
   render() {
@@ -55,14 +74,23 @@ export default class App extends Component {
       );
     }
 
+    const AppBarIcon = () => {
+       return (!this.state.openDrawer) ? <NavigationMenu /> : <NavigationClose />;
+    }
+
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className={styles.app}>
           <Helmet {...config.app.head}/>
+          <AppBar
+            title={<span style={styles.title}>KATAKANA</span>}
+            iconElementLeft={<IconButton><AppBarIcon /></IconButton>}
+            onLeftIconButtonTouchTap={() => this.setState({openDrawer: true})}
+          />
           <Drawer
             docked={false}
             width={400}
-            open={this.state.open}
+            open={this.state.openDrawer}
             zDepth={0}
             containerStyle={{backgroundColor: '#fefffa'}}
             containerClassName={styles.drawer}
@@ -90,7 +118,13 @@ export default class App extends Component {
             runOnMount={false}
             {...presets.fade}
             >
-          <div className={styles.appContent}>
+            <div
+              className={styles.appContent}
+              style={{
+                marginTop: (this.state.openDrawer) ? '56px' : '16px',
+                marginLeft: (this.state.openDrawer) ? '456px' : '16px',
+              }}
+              >
             {this.props.children}
           </div>
         </RouteTransition>
