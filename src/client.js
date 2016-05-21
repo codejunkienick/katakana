@@ -4,6 +4,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ga from 'react-ga';
 import createStore from './redux/create';
 import ApiClient from './helpers/ApiClient';
 import io from 'socket.io-client';
@@ -25,6 +26,16 @@ const dest = document.getElementById('content');
 const store = createStore(_browserHistory, client, window.__data);
 const history = syncHistoryWithStore(_browserHistory, store);
 
+if (process.env.NODE_ENV !== 'production') {
+  ga.initialize('UA-78109937-1');
+}
+
+function logPageView() {
+  if (process.env.NODE_ENV === 'production') {
+    ga.pageview(window.location.pathname);
+  }
+}
+
 function initSocket() {
   const socket = io('', {path: '/ws'});
   return socket;
@@ -35,7 +46,7 @@ function initSocket() {
 const component = (
   <Router render={(props) =>
         <ReduxAsyncConnect {...props} helpers={{client}} filter={item => !item.deferred} />
-      } history={history}>
+      } history={history} onUpdate={logPageView}>
     {getRoutes(store)}
   </Router>
 );
