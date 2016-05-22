@@ -11,7 +11,7 @@ export default class About extends Component {
         <Helmet title="Проекты"/>
         <h2 className="page-title">Проекты</h2>
         <div className={styles.project}>
-          <h3 className={styles.projectName}>Katakana</h3>
+          <h3 className={styles.projectName}>KATAKANA</h3>
           <div className={styles.projectCols}>
             <div className={styles.projectCol}>
               <p>
