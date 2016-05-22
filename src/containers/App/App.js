@@ -40,7 +40,7 @@ export default class App extends Component {
   };
 
   shouldOpenDrawer(windowWidth) {
-    return windowWidth > 800;
+    return windowWidth > 1024;
   }
 
   constructor(props) {
@@ -63,13 +63,17 @@ export default class App extends Component {
   }
 
   draw = () => {
-    this.setState({openDrawer: this.shouldOpenDrawer(window.innerWidth)})
+    this.setState({
+      windowWidth: window.innerWidth,
+      openDrawer: this.shouldOpenDrawer(window.innerWidth)
+    })
   }
 
   render() {
     const {user} = this.props;
     const styles = require('./App.scss');
     const logo = require('./logo.svg');
+    const logoMobile = require('./logoMobile.svg');
 
     const NavLink = (props) => {
       return (
@@ -81,13 +85,25 @@ export default class App extends Component {
     }
 
     const AppBarIcon = () => {
-       return <NavigationMenu />;
+       return <NavigationMenu style={{fill: 'rgb(150, 149, 149)'}} />;
+    }
+    const AppBarTitle = () => {
+      return (
+        <div style={{display: 'flex', height: 'inherit'}}>
+          <img style={{display: 'flex', alignSelf: 'center', height: '20px'}} src={logoMobile}/>
+        </div>
+      );
     }
 
     const appBarStyles = () => {
       if (this.state.windowWidth > 1024) {
         return {
           display: 'none'
+        }
+      } else {
+        return {
+          backgroundColor: '#fefffa',
+          borderBottom: '3px solid #e2e4e0'
         }
       }
     }
@@ -96,9 +112,15 @@ export default class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className={styles.app}>
           <Helmet {...config.app.head}/>
+          <AppBar
+            zDepth={0}
+            style={appBarStyles()} 
+            title={<AppBarTitle />}
+            iconElementLeft={<IconButton onTouchTap={(e) => this.setState({openDrawer: !this.state.openDrawer})}><AppBarIcon /></IconButton>}
+          />
           <Drawer
             docked={false}
-            width={400}
+            width={(this.state.windowWidth > 1024) ? 400 : 300}
             open={this.state.openDrawer}
             zDepth={0}
             containerStyle={{backgroundColor: '#fefffa'}}
@@ -123,12 +145,6 @@ export default class App extends Component {
             </div>
           </div>
           </Drawer>
-          <AppBar
-            zDepth={0}
-            style={appBarStyles()} 
-            title={<span style={styles.title}>KATAKANA</span>}
-            iconElementLeft={<IconButton onTouchTap={(e) => this.setState({openDrawer: !this.state.openDrawer})}><AppBarIcon /></IconButton>}
-          />
           <RouteTransition
             pathname={this.props.location.pathname}
             runOnMount={false}

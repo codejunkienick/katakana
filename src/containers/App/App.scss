@@ -4,17 +4,11 @@
   margin-top: 56px;
   max-width: 800px;
   position: absolute;
+  padding-right: 16px;
 }
 
 
 small, .font_small {font-size: 0.707em;}
-
-.appBar {
-  display: none;
-  @media only screen and (max-device-width : 1024px) {
-    display: block;
-  } 
-}
 
 $drawer-font-family: monospace;
 .drawer {
@@ -31,6 +25,9 @@ $drawer-font-family: monospace;
 
 .drawerLogo {
   margin: 50px 68px;
+  @media screen and (max-width: 1024px) {
+    margin: 25px 34px;
+  }
 }
 
 .activeDrawerLink:before,
