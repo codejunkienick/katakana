@@ -9,8 +9,14 @@
 
 small, .font_small {font-size: 0.707em;}
 
-$drawer-font-family: monospace;
+.appBar {
+  display: none;
+  @media only screen and (max-device-width : 1024px) {
+    display: block;
+  } 
+}
 
+$drawer-font-family: monospace;
 .drawer {
   border-right: 3px solid #e2e4e0;
   background: #fefffa;

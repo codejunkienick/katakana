@@ -52,7 +52,10 @@ export default class App extends Component {
   }
   componentDidMount() {
     window.addEventListener('resize', this.draw); 
-    this.setState({openDrawer: this.shouldOpenDrawer(window.innerWidth)})
+    this.setState({
+      windowWidth: window.innerWidth,
+      openDrawer: this.shouldOpenDrawer(window.innerWidth)
+    })
   }
 
   componentWillUnmount(){
@@ -70,23 +73,29 @@ export default class App extends Component {
 
     const NavLink = (props) => {
       return (
-        <Link activeClassName={styles.activeDrawerLink} to={props.to}>{props.text}</Link>
+        <Link activeClassName={styles.activeDrawerLink} to={props.to} onClick={() => {
+          this.setState({openDrawer: (this.state.windowWidth < 1024) ? false : true});
+          this.props.pushState(props.to);
+        }}>{props.text}</Link>
       );
     }
 
     const AppBarIcon = () => {
-       return (!this.state.openDrawer) ? <NavigationMenu /> : <NavigationClose />;
+       return <NavigationMenu />;
+    }
+
+    const appBarStyles = () => {
+      if (this.state.windowWidth > 1024) {
+        return {
+          display: 'none'
+        }
+      }
     }
 
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className={styles.app}>
           <Helmet {...config.app.head}/>
-          <AppBar
-            title={<span style={styles.title}>KATAKANA</span>}
-            iconElementLeft={<IconButton><AppBarIcon /></IconButton>}
-            onLeftIconButtonTouchTap={() => this.setState({openDrawer: true})}
-          />
           <Drawer
             docked={false}
             width={400}
@@ -94,7 +103,8 @@ export default class App extends Component {
             zDepth={0}
             containerStyle={{backgroundColor: '#fefffa'}}
             containerClassName={styles.drawer}
-            docked={true}
+            docked={(this.state.windowWidth > 1024)}
+            onRequestChange={(open) => this.setState({openDrawer: open})}
           >
           <div className={styles.drawerContent}>
             <div className={styles.drawerLogo}>
@@ -113,6 +123,12 @@ export default class App extends Component {
             </div>
           </div>
           </Drawer>
+          <AppBar
+            zDepth={0}
+            style={appBarStyles()} 
+            title={<span style={styles.title}>KATAKANA</span>}
+            iconElementLeft={<IconButton onTouchTap={(e) => this.setState({openDrawer: !this.state.openDrawer})}><AppBarIcon /></IconButton>}
+          />
           <RouteTransition
             pathname={this.props.location.pathname}
             runOnMount={false}
@@ -121,8 +137,8 @@ export default class App extends Component {
             <div
               className={styles.appContent}
               style={{
-                marginTop: (this.state.openDrawer) ? '56px' : '16px',
-                marginLeft: (this.state.openDrawer) ? '456px' : '16px',
+                marginTop: (this.state.windowWidth > 1024) ? '56px' : '16px',
+                marginLeft: (this.state.windowWidth > 1024) ? '456px' : '16px',
               }}
               >
             {this.props.children}
