@@ -48,6 +48,9 @@ $drawer-font-family: monospace;
   display: flex;
   flex: 1;
   flex-direction: column;
+  @media screen and (max-width: 1024px) {
+  margin-left: 56px;
+  }
 
   a:hover {
     color: #222;
