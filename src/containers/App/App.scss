@@ -25,9 +25,16 @@ $drawer-font-family: monospace;
 }
 
 .drawerLogo {
+  display: flex;
+  flex-direction: column;
   margin: 50px 68px;
   @media screen and (max-width: 1024px) {
     margin: 25px 34px;
+    display: flex;
+  }
+  img {
+    display:block;
+    max-width: 260px;
   }
 }
 
