@@ -23,20 +23,6 @@ export default class Html extends Component {
     const {assets, component, store} = this.props;
     const content = component ? ReactDOM.renderToString(component) : '';
     const head = Helmet.rewind();
-    const css = `
-    html {
-      height: 100%;
-    }
-    body {
-      background-color: rgb(253, 253, 253);
-      height: 100%;
-      //Ugly hack. TODO: redo this
-    }
-    body > div,
-    &ody > div > div,
-    &ody > div > div > div 
-    { height: 100% }
-    `;
 
     return (
       <html lang="ru-ru">
@@ -50,9 +36,6 @@ export default class Html extends Component {
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-          <style>
-            {css}
-          </style>
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {Object.keys(assets.styles).map((style, key) =>
             <link href={assets.styles[style]} key={key} media="screen, projection"

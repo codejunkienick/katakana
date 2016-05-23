@@ -196,8 +196,8 @@ export default class AppWrapper extends Component {
               height: '100%',
               flex: '1 1 100%',
               display: 'flex',
-              justifyContent: 'center', 
-              alignItems: 'center',
+              marginTop: '150px',
+              alignItems: 'center', 
               flexDirection: 'column',
               fontSize: '1.45em',
               fontFamily: 'Helvetica, sans-serif'
