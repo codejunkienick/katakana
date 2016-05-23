@@ -24,7 +24,7 @@ module.exports = Object.assign({
         {charset: 'utf-8'},
         {property: 'og:site_name', content: 'KATAKANA'},
         {property: 'og:image', content: 'http://katakana.xyz/logo.png'},
-        {property: 'og:locale', content: 'en_US'},
+        {property: 'og:locale', content: 'ru_RU'},
         {property: 'og:title', content: 'KATAKANA'},
         {property: 'og:description', content: 'Группа разработчиков, расположенная в Перми'},
         {property: 'og:card', content: 'summary'},
