@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-connect';
-import { Drawer, AppBar, IconButton } from 'material-ui';
+import { Drawer, AppBar, IconButton, CircularProgress } from 'material-ui';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -32,7 +32,7 @@ injectTapEventPlugin();
 @connect(
   state => ({user: state.auth.user}),
   {pushState: push})
-export default class App extends Component {
+class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,
     user: PropTypes.object,
@@ -46,15 +46,17 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openDrawer: false
+      openDrawer: false,
+      loading: true
     }
-
   }
+
   componentDidMount() {
     window.addEventListener('resize', this.draw); 
     this.setState({
       windowWidth: window.innerWidth,
-      openDrawer: this.shouldOpenDrawer(window.innerWidth)
+      openDrawer: this.shouldOpenDrawer(window.innerWidth),
+      loading: false,
     })
   }
 
@@ -109,7 +111,6 @@ export default class App extends Component {
     }
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className={styles.app}>
           <Helmet {...config.app.head}/>
           <AppBar
@@ -157,9 +158,47 @@ export default class App extends Component {
                 marginLeft: (this.state.windowWidth > 1024) ? '456px' : '16px',
               }}
               >
-            {this.props.children}
+              {this.props.children}
           </div>
         </RouteTransition>
+        </div>
+    );
+  }
+}
+
+export default class AppWrapper extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
+
+  componentDidMount() {
+    this.setState({loading: false});
+  }
+  
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <div>
+          {!this.state.loading && <App {...this.props}/>}
+          {this.state.loading && 
+            <div style={{
+              height: '100%',
+              flex: '1 1 100%',
+              display: 'flex',
+              justifyContent: 'center', 
+              alignItems: 'center',
+              flexDirection: 'column'
+            }}>
+              <div className="sk-folding-cube">
+                <div className="sk-cube1 sk-cube"></div>
+                <div className="sk-cube2 sk-cube"></div>
+                <div className="sk-cube4 sk-cube"></div>
+                <div className="sk-cube3 sk-cube"></div>
+              </div>
+              Ожидайте...
+            </div>
+          }
         </div>
       </MuiThemeProvider>
     );

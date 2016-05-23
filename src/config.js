@@ -16,22 +16,22 @@ module.exports = Object.assign({
   apiPort: process.env.APIPORT,
   app: {
     title: 'KATAKANA',
-    description: 'Developer group based in Perm, Russia.',
+    description: 'Группа разработчиков, расположенная в Перми',
     head: {
       titleTemplate: 'KATAKANA: %s',
       meta: [
-        {name: 'description', content: 'Developer group based in Perm, Russia.'},
+        {name: 'description', content: 'Группа разработчиков, расположенная в Перми'},
         {charset: 'utf-8'},
         {property: 'og:site_name', content: 'KATAKANA'},
-        // {property: 'og:image', content: 'https://react-redux.herokuapp.com/logo.jpg'},
+        {property: 'og:image', content: 'http://katakana.xyz/logo.png'},
         {property: 'og:locale', content: 'en_US'},
         {property: 'og:title', content: 'KATAKANA'},
-        {property: 'og:description', content: 'Developer group based in Perm, Russia.'},
+        {property: 'og:description', content: 'Группа разработчиков, расположенная в Перми'},
         {property: 'og:card', content: 'summary'},
         {property: 'og:site', content: '@codejunkienick'},
         {property: 'og:creator', content: '@codejunkienick'},
-        // {property: 'og:image:width', content: '200'},
-        // {property: 'og:image:height', content: '200'}
+        {property: 'og:image:width', content: '500'},
+        {property: 'og:image:height', content: '500'}
       ]
     }
   },
