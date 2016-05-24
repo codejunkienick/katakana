@@ -23,14 +23,20 @@ const targetUrl = 'http://' + config.apiHost + ':' + config.apiPort;
 const pretty = new PrettyError();
 const app = new Express();
 const server = new http.Server(app);
+const maxAge = 86400000 * 7; // a week
 const proxy = httpProxy.createProxyServer({
   target: targetUrl,
   ws: true
 });
 
 app.use(compression());
+app.use(function (req, res, next) {
+    if (req.url.match(/^\/(css|js|img|font|woff2|svg|ttf|eot|woff)\/.+/)) {
+        res.setHeader('Cache-Control', 'public, max-age=' + maxAge);
+    }
+    next();
+});
 app.use(favicon(path.join(__dirname, '..', 'static', 'favicon.ico')));
-
 app.use(Express.static(path.join(__dirname, '..', 'static')));
 
 // Proxy to API server
