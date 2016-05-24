@@ -58,6 +58,17 @@ class App extends Component {
       openDrawer: this.shouldOpenDrawer(window.innerWidth),
       loading: false,
     })
+    const WebFont = require('webfontloader');
+    WebFont.load({
+      google: {
+        families: ['Roboto Slab:400:latin,cyrillic']
+      },
+      custom: {
+        families: ['Lato'],
+        urls: ['/fonts/lato/css/lato.min.css']
+      },
+      timeout: 2000
+    });
   }
 
   componentWillUnmount(){
