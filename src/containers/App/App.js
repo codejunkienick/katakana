@@ -67,7 +67,11 @@ class App extends Component {
         families: ['Lato'],
         urls: ['/fonts/lato/css/lato.min.css']
       },
-      timeout: 2000
+      timeout: 2000,
+
+      active: function() {
+        sessionStorage.fonts = true;
+      }
     });
   }
 
