@@ -15,7 +15,7 @@ export default class Home extends Component {
           title="KATAKANA --version 0.1"
           author="codejunkienick"
           authorLink="/members#codejunkienick"
-          date="16-05-2016 09:22">
+          date="22-05-2016 17:22">
           <p style={{fontStyle: 'italic'}}>
             "У тебя есть портфолио?", "Когда вы уже катакану запустите", "Тебе с твоими скиллами на работу пора" &mdash; анонимные люди
           </p>

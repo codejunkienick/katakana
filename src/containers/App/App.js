@@ -215,7 +215,7 @@ export default class AppWrapper extends Component {
               alignItems: 'center', 
               flexDirection: 'column',
               fontSize: '1.45em',
-              color: '#4d4d4d',
+              color: '#3D3C3C',
               fontFamily: 'Helvetica, sans-serif'
             }}>
             <img style={{width: '100px'}}src={loader}/>
