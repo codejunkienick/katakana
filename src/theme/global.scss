@@ -9,8 +9,6 @@ body {
   line-height: 1.45;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   .wf-active & {
-    font-size: 26px;
-    line-height: 30px;
     font-family: 'Lato';
   }
   color: #4d4d4d;
@@ -29,8 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   line-height: 1.2;
   .wf-active & {
-    font-size: 26px;
-    line-height: 30px;
     font-family: 'Roboto Slab';
   }
 }
