@@ -52,6 +52,7 @@ export default class Html extends Component {
           <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} charSet="UTF-8"/>
           <script src={assets.javascript.main}  defer="true" charSet="UTF-8"/>
           <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+          <link href='/fonts/lato/css/lato.min.css' rel='stylesheet' type='text/css' />
         </body>
       </html>
     );

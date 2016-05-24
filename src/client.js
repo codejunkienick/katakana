@@ -15,11 +15,6 @@ import { ReduxAsyncConnect } from 'redux-connect';
 import useScroll from 'scroll-behavior/lib/useStandardScroll';
 import getRoutes from './routes';
 
-/*
- * Fonts
- */
-require('./theme/fonts/lato/scss/lato.scss');
-
 const client = new ApiClient();
 const _browserHistory = useScroll(() => browserHistory)();
 const dest = document.getElementById('content');
