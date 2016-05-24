@@ -177,7 +177,7 @@ export default class AppWrapper extends Component {
   componentDidMount() {
     this.timer = setTimeout(
       () => { this.setState({loading: false}); },
-        500
+        1000 / 60
     );
   }
 
