@@ -33,7 +33,7 @@ export default class About extends Component {
             <div className={styles.memberCol}>
               <p>
                 <span>(навыки)</span><br />
-                frontend/backend разрботчик<br/>
+                frontend/backend разработчик<br/>
                 Прототипирование<br/>
               </p>
             </div>
