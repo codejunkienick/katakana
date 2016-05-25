@@ -12,6 +12,25 @@ export default class Home extends Component {
       <div className={styles.blog}>
         <Helmet title="Блог"/>
         <BlogEntry
+          title="Update v0.1.1"
+          author="codejunkienick"
+          authorLink="/members#codejunkienick"
+          date="25-05-2016 19:22">
+          <p>
+            Спасибо всем, кто отправил свои баг репорты. Благодаря вам производительность сайта намного улучшилась. Я буду продолжать вносить небольшие поправки к текущему дизайну, а еще скоро тут появиться контент, посвященный веб разработке.
+          </p>
+          <p>
+            Список изменений: 
+            <ul>
+              <li>адаптация верстки под Safari</li>
+              <li>исправлены отступы на страницах "Проекты" и "Состав"</li>
+              <li>оптизирована загрузка шрифтов</li>
+              <li>исправлены опечатки</li>
+              <li>добавлен экран загрузки</li>
+            </ul>
+          </p>
+        </BlogEntry>
+        <BlogEntry
           title="KATAKANA --version 0.1"
           author="codejunkienick"
           authorLink="/members#codejunkienick"

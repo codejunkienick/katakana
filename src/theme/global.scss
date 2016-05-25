@@ -68,6 +68,49 @@ a {
   }
 }
 
+ul,
+ol {
+  margin-top: 0.7em;
+  margin-bottom: 1.414em;
+}
+ul li,
+ol li {
+  line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.414em;
+  margin-bottom: 1.414em;
+}
+
+/* Tables */
+table {
+  margin-top: 1.414em;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0;
+  line-height: 33px;
+}
+/* Code blocks */
+code {
+  vertical-align: bottom;
+}
+
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+
 .page-title {
   color: rgba(77, 77, 77, 0.65);
   line-height: 1;
