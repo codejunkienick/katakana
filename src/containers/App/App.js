@@ -12,6 +12,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { RouteTransition, presets } from 'react-router-transition';
+import { isLoaded as isBlogLoaded, load as loadBlog } from 'redux/modules/blog';
 
 // Needed for onTouchTap
 // Check this repo:
@@ -22,9 +23,9 @@ injectTapEventPlugin();
   promise: ({store: {dispatch, getState}}) => {
     const promises = [];
 
-    // if (!isInfoLoaded(getState())) {
-    //   promises.push(dispatch(loadInfo()));
-    // }
+    if (!isBlogLoaded(getState())) {
+      promises.push(dispatch(loadBlog()));
+    }
 
     return Promise.all(promises);
   }

@@ -4,7 +4,8 @@ import config from '../config';
 const methods = ['get', 'post', 'put', 'patch', 'del'];
 
 function formatUrl(path) {
-  const adjustedPath = path[0] !== '/' ? '/' + path : path;
+  const slashPath = path[0] !== '/' ? '/' + path : path;
+  const adjustedPath = '/wp-json/v2' + slashPath;
   if (__SERVER__) {
     // Prepend host and port of the API server to the path.
     return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath;

@@ -3,12 +3,10 @@ import multireducer from 'multireducer';
 import { routerReducer } from 'react-router-redux';
 import {reducer as reduxAsyncConnect} from 'redux-connect';
 
-import auth from './auth';
-import info from './info';
+import blog from './blog';
 
 export default combineReducers({
   routing: routerReducer,
   reduxAsyncConnect,
-  auth,
-  info,
+  blog
 });
