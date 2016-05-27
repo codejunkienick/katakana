@@ -15,7 +15,7 @@ export default class BlogEntry extends Component {
             <h2 className={styles.title}>{this.props.title.rendered}</h2>
             <div className={styles.meta}>
               <span className={styles.date}>{formatedDate}</span>
-              <Link className={styles.author} to={'/contact# ' + this.props._embedded.author[0].slug}>@<span>{this.props._embedded.author[0].slug}</span></Link>
+              <Link className={styles.author} to={'/members#' + this.props._embedded.author[0].slug}>@<span>{this.props._embedded.author[0].slug}</span></Link>
             </div>
           </div>
           <div className={styles.content} dangerouslySetInnerHTML={{__html: this.props.content.rendered}}/>
