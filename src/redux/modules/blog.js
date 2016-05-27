@@ -18,7 +18,7 @@ export default function info(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        data: action.result
+        posts: action.result
       };
     case LOAD_FAIL:
       return {
@@ -39,6 +39,6 @@ export function isLoaded(globalState) {
 export function load() {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/posts')
+    promise: (client) => client.get('/posts?_embed=author')
   };
 }

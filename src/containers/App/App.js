@@ -19,19 +19,8 @@ import { isLoaded as isBlogLoaded, load as loadBlog } from 'redux/modules/blog';
 // https://github.com/zilverline/react-tap-event-plugin
 injectTapEventPlugin();
 
-@asyncConnect([{
-  promise: ({store: {dispatch, getState}}) => {
-    const promises = [];
-
-    if (!isBlogLoaded(getState())) {
-      promises.push(dispatch(loadBlog()));
-    }
-
-    return Promise.all(promises);
-  }
-}])
 @connect(
-  state => ({user: state.auth.user}),
+  state => ({}),
   {pushState: push})
 class App extends Component {
   static propTypes = {
@@ -184,6 +173,20 @@ class App extends Component {
   }
 }
 
+
+@asyncConnect([{
+  promise: ({store: {dispatch, getState}}) => {
+    const promises = [];
+
+    console.log('asyncConnect');
+
+    if (!isBlogLoaded(getState())) {
+      promises.push(dispatch(loadBlog()));
+    }
+
+    return Promise.all(promises);
+  }
+}])
 export default class AppWrapper extends Component {
   constructor(props) {
     super(props);

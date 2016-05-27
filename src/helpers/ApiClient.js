@@ -5,7 +5,7 @@ const methods = ['get', 'post', 'put', 'patch', 'del'];
 
 function formatUrl(path) {
   const slashPath = path[0] !== '/' ? '/' + path : path;
-  const adjustedPath = '/wp-json/v2' + slashPath;
+  const adjustedPath = (config.isProduction) ? '/wp/wp-json/wp/v2' + slashPath : '/wp-json/wp/v2' + slashPath;
   if (__SERVER__) {
     // Prepend host and port of the API server to the path.
     return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath;
@@ -19,6 +19,8 @@ export default class ApiClient {
     methods.forEach((method) =>
       this[method] = (path, { params, data } = {}) => new Promise((resolve, reject) => {
         const request = superagent[method](formatUrl(path));
+
+        console.log(formatUrl(path));
 
         if (params) {
           request.query(params);
