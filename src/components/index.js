@@ -6,4 +6,5 @@
  */
 
 export BlogEntry from './BlogEntry/BlogEntry.js';
+export Spinner from './Spinner/Spinner.js';
 
