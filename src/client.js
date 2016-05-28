@@ -23,6 +23,18 @@ const history = syncHistoryWithStore(_browserHistory, store);
 
 require('../static/fonts/lato/scss/lato.scss');
 
+const asci = `
+______ ____________________________ _____________   ________ 
+___  //_/__    |__  __/__    |__  //_/__    |__  | / /__    |
+__  ,<  __  /| |_  /  __  /| |_  ,<  __  /| |_   |/ /__  /| |
+_  /| | _  ___ |  /   _  ___ |  /| | _  ___ |  /|  / _  ___ |
+/_/ |_| /_/  |_/_/    /_/  |_/_/ |_| /_/  |_/_/ |_/  /_/  |_|
+`;
+console.log(asci);
+console.log("Если вы хотите вступить в группу разработчиков KATAKANA, обращайтесь по адрессу mail@katakana.xyz");
+console.log("Если вам интересна не только сгенерированная верстка, приглашаю вас посетить репозиторий на github: http://github.com/codejunkienick/katakana");
+                                                             
+
 if (process.env.NODE_ENV === 'production') {
   ga.initialize('UA-78109937-1');
 }
