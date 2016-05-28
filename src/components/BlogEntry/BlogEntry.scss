@@ -3,6 +3,24 @@
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 2.35em;
+  position: relative;
+  a {
+    text-decoration: none;
+    border: none;
+  }
+  a:hover {
+    color: #222;
+  }
+  &:hover::before {
+    content: '>';
+    display: inline-block;
+    position: absolute;
+    left: -24px;
+    top: 10px;
+    font-size: 26px;
+    font-family: Monospace;
+    color:#222;
+  }
 }
 
 .meta {
