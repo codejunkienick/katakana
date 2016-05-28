@@ -159,7 +159,8 @@ class App extends Component {
               className={styles.appContent}
               style={{
                 marginTop: (this.state.windowWidth > 1024) ? '56px' : '16px',
-                marginLeft: (this.state.windowWidth > 1024) ? '456px' : '16px',
+                marginLeft: (this.state.windowWidth > 1024) ? '400px' : '0px',
+                paddingLeft: (this.state.windowWidth > 1024) ? '56px' : '16px',
               }}
               >
               {this.props.children}
