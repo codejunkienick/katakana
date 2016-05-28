@@ -8,6 +8,7 @@ import {
     Projects,
     Members,
     NotFound,
+    SinglePost
   } from 'containers';
 
 export default (store) => {
@@ -20,6 +21,7 @@ export default (store) => {
       <IndexRoute component={Blog}/>
 
       { /* Routes */ }
+      <Route path="blog/:slug" component={SinglePost}/>
       <Route path="blog" component={Blog}/>
       <Route path="about" component={About}/>
       <Route path="contact" component={Contact}/>

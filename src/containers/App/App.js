@@ -187,7 +187,7 @@ class App extends Component {
 export default class AppWrapper extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    this.state = { loading: false };
   }
 
   componentDidMount() {
@@ -198,11 +198,9 @@ export default class AppWrapper extends Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timer);
   }
     
   render() {
-    const loader = require('./loader.svg');
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
@@ -219,7 +217,6 @@ export default class AppWrapper extends Component {
               color: '#3D3C3C',
               fontFamily: 'Helvetica, sans-serif'
             }}>
-            <img style={{width: '100px'}}src={loader}/>
               Ожидайте
             </div>
           }

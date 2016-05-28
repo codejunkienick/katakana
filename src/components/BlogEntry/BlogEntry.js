@@ -10,7 +10,7 @@ export default class BlogEntry extends Component {
     return (
         <div className={styles.entry}>
           <div className={styles.header}>
-            <h2 className={styles.title}>{this.props.title.rendered}</h2>
+            <h2 className={styles.title}><Link to={'/blog/' + this.props.slug}>{this.props.title.rendered}</Link></h2>
             <div className={styles.meta}>
               <span className={styles.date}>{formatedDate}</span>
               <Link className={styles.author} to={'/members#' + this.props._embedded.author[0].slug}>@<span>{this.props._embedded.author[0].slug}</span></Link>
