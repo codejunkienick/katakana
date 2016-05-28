@@ -1,30 +1,33 @@
 .project {
-  margin-bottom: 2.6em;
+  margin-bottom: 1.4em;
 }
 
 .projectName {
   margin-top: 0px;
   font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'sans-serif';
   font-size: 24px;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 
 .projectCols {
-  span { font-size: 16px; }
   width: 100%;
   display: flex;
   flex-direction: row;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
+  span { font-size: 16px; }
+  p {
+    margin-top:0;
+    margin-bottom: 0.5em;
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 0.25em;
+    }
+  }
 }
 .projectCol {
   display: flex;
   padding-right: 40px;
-
-  p {
-    margin-bottom: 0.5em;
-  }
 }
 .projectCol:last-of-type {
   padding-right: 0;

@@ -28,7 +28,7 @@ export default class Home extends Component {
       <div className={styles.blog}>
         <Helmet title={(post) ? post.title.rendered : 'Загрузка'}/>
         {loaded && post &&
-          <BlogEntry {...post} />
+          <BlogEntry {...post} single={true} />
         }
         {loading && <Spinner />}
       </div>
