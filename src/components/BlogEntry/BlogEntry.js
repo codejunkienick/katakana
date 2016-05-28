@@ -6,9 +6,7 @@ export default class BlogEntry extends Component {
   render() {
     const styles = require('./BlogEntry.scss');
     const dateObj = new Date(Date.parse(this.props.date));
-    console.log(dateObj);
     const formatedDate = ('0' + dateObj.getDate()).slice(-2) + '-' + ('0' + (dateObj.getMonth()+1)).slice(-2) + '-' + dateObj.getFullYear() + ' ' + dateObj.getHours() + ':' + dateObj.getMinutes();
-    console.log( this.props._embedded.author[0]);
     return (
         <div className={styles.entry}>
           <div className={styles.header}>
