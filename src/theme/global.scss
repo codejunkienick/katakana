@@ -1,3 +1,8 @@
+/**
+ * Override Bootstrap styles that you can't modify via variables here.
+ *
+ */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
 
 html {
@@ -117,4 +122,6 @@ code {
   color: rgba(77, 77, 77, 0.65);
   line-height: 1;
 }
+
+
 
