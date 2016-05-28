@@ -14,6 +14,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { RouteTransition, presets } from 'react-router-transition';
 import { isLoaded as isBlogLoaded, load as loadBlog } from 'redux/modules/blog';
 
+
 // Needed for onTouchTap
 // Check this repo:
 // https://github.com/zilverline/react-tap-event-plugin
@@ -37,7 +38,8 @@ class App extends Component {
     super(props);
     this.state = {
       openDrawer: false,
-      loading: true
+      loading: true,
+      fontFamily: false
     }
   }
 
@@ -48,20 +50,13 @@ class App extends Component {
       openDrawer: this.shouldOpenDrawer(window.innerWidth),
       loading: false,
     })
-    const WebFont = require('webfontloader');
-    WebFont.load({
-      google: {
-        families: ['Roboto Slab:400:latin,cyrillic']
-      },
-      custom: {
-        families: ['Lato'],
-        urls: ['/fonts/lato/css/lato.min.css']
-      },
-      timeout: 2000,
+    const FontFaceObserver = require('fontfaceobserver');
+    const robotoSlab = new FontFaceObserver('Roboto Slab');
+    const arimoBody = new FontFaceObserver('Lato');
+    const arimoLead = new FontFaceObserver('Lato', {style: 'italic'});
 
-      active: function() {
-        sessionStorage.fonts = true;
-      }
+    Promise.all([robotoSlab.load(), arimoBody.load(), arimoLead.load()]).then(function () {
+      document.body.className += ' fonts-loaded';
     });
   }
 
@@ -118,7 +113,7 @@ class App extends Component {
     return (
       <div
         style={{height: '100%'}}
-        className={styles.app}>
+        className={(this.state.fontsLoaded) ? styles.app + ' ' + styles.fontsLoaded : styles.app}>
           <Helmet {...config.app.head}/>
           <AppBar
             zDepth={0}

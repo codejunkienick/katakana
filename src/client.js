@@ -21,6 +21,8 @@ const dest = document.getElementById('content');
 const store = createStore(_browserHistory, client, window.__data);
 const history = syncHistoryWithStore(_browserHistory, store);
 
+require('../static/fonts/lato/scss/lato.scss');
+
 if (process.env.NODE_ENV === 'production') {
   ga.initialize('UA-78109937-1');
 }
