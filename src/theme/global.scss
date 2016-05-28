@@ -8,6 +8,10 @@
 html {
   font-size: 1.125em;
   height: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body.fonts-loaded {
   font-family: 'Lato', Helvetica, sans-serif;
