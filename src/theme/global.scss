@@ -3,7 +3,7 @@
  *
  */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono&subset=latin,cyrillic);
 
 html {
   font-size: 1.125em;
@@ -17,7 +17,11 @@ body.fonts-loaded {
   font-family: 'Lato', Helvetica, sans-serif;
 
   h1,h2,h3,h4,h5,h6{
-    font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, serif;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, serif;
+  }
+
+  code {
+    font-family: 'Roboto Mono', 'Consolas', monospace;
   }
 }
 
@@ -115,6 +119,31 @@ table th {
 /* Code blocks */
 code {
   vertical-align: bottom;
+}
+
+.hljs {
+  background-color:#F1F0ED;
+}
+
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  line-height: 140%;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+}       
+
+code {
+  padding: 12px 16px;
+  border-radius: 3px;
+  display: block;
+  font-family: Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  line-height: 140%;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
 }
 
 /* Hug the block above you */

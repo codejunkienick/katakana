@@ -18,6 +18,7 @@
 small, .font_small {font-size: 0.707em;}
 
 $drawer-font-family: monospace;
+
 .drawer {
   border-right: 3px solid #e2e4e0;
   background: #fefffa;
@@ -53,7 +54,7 @@ $drawer-font-family: monospace;
   left: -18px;
   top: -2px;
   font-size: 17px;
-  font-family: $drawer-font-family;
+  font-family: inherit;
 }
 
 .nav {
@@ -73,7 +74,7 @@ $drawer-font-family: monospace;
     text-decoration: none;
     border: none;
     font-size: 18px;
-    font-family: $drawer-font-family;
+    font-family: inherit;
   }
   li {
     margin-bottom: 32px;
@@ -85,7 +86,7 @@ $drawer-font-family: monospace;
 
 .drawerFooter {
   display: flex;
-  font-family: $drawer-font-family;
+  font-family: inherit;
   font-size: 16px;
   margin: 0 0 28px 40px;
   flex-grow: 1;

@@ -14,7 +14,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { RouteTransition, presets } from 'react-router-transition';
 import { isLoaded as isBlogLoaded, load as loadBlog } from 'redux/modules/blog';
 
-
 // Needed for onTouchTap
 // Check this repo:
 // https://github.com/zilverline/react-tap-event-plugin
@@ -39,7 +38,7 @@ class App extends Component {
     this.state = {
       openDrawer: false,
       loading: true,
-      fontFamily: false
+      drawerFontsLoaded: false
     }
   }
 
@@ -50,18 +49,25 @@ class App extends Component {
       openDrawer: this.shouldOpenDrawer(window.innerWidth),
       loading: false,
     })
-    const FontFaceObserver = require('fontfaceobserver');
-    const robotoSlab = new FontFaceObserver('Roboto Slab');
-    const arimoBody = new FontFaceObserver('Lato');
-    const arimoLead = new FontFaceObserver('Lato', {style: 'italic'});
-
-    Promise.all([robotoSlab.load(), arimoBody.load(), arimoLead.load()]).then(function () {
-      document.body.className += ' fonts-loaded';
-    });
+    this.loadFonts();
   }
 
   componentWillUnmount(){
     window.removeEventListener('resize', this.draw); 
+  }
+
+  loadFonts() {
+    const FontFaceObserver = require('fontfaceobserver');
+    const robotoMono = new FontFaceObserver('Roboto Mono');
+    const latoBody = new FontFaceObserver('Lato');
+    const latoLead = new FontFaceObserver('Lato', {style: 'italic'});
+
+    Promise.all([latoBody.load(), latoLead.load()]).then(() => {
+      document.body.className += ' fonts-loaded';
+    });
+    robotoMono.load().then(() => {
+      this.setState({drawerFontsLoaded: true}); 
+    });
   }
 
   draw = () => {
@@ -126,7 +132,10 @@ class App extends Component {
             width={(this.state.windowWidth > 1024) ? 400 : 300}
             open={this.state.openDrawer}
             zDepth={0}
-            containerStyle={{backgroundColor: '#fefffa'}}
+            containerStyle={{
+              backgroundColor: '#fefffa',
+              fontFamily: (this.state.drawerFontsLoaded) ? 'Roboto Mono, monospace' : 'monospace'
+            }}
             containerClassName={styles.drawer}
             docked={(this.state.windowWidth > 1024)}
             onRequestChange={(open) => this.setState({openDrawer: open})}
@@ -186,41 +195,11 @@ class App extends Component {
   }
 }])
 export default class AppWrapper extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { loading: false };
-  }
-
-  componentDidMount() {
-    this.timer = setTimeout(
-      () => { this.setState({loading: false}); },
-        1000 / 60
-    );
-  }
-
-  componentWillUnmount() {
-  }
-    
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
-          {!this.state.loading && <App {...this.props}/>}
-          {this.state.loading && 
-            <div style={{
-              height: '100%',
-              flex: '1 1 100%',
-              display: 'flex',
-              marginTop: '150px',
-              alignItems: 'center', 
-              flexDirection: 'column',
-              fontSize: '1.45em',
-              color: '#3D3C3C',
-              fontFamily: 'Helvetica, sans-serif'
-            }}>
-              Ожидайте
-            </div>
-          }
+          <App {...this.props}/>
         </div>
       </MuiThemeProvider>
     );

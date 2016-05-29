@@ -16,6 +16,7 @@ export default class Home extends Component {
     return (
       <div className={styles.blog}>
         <Helmet title="Блог"/>
+        <h1 style={{display: 'none'}}>Блог</h1>
         {this.props.posts && this.props.posts.map((post, idx) => <BlogEntry {...post} key={idx} />)}
         {this.props.loading && !this.props.posts && <Spinner />}
       </div>
