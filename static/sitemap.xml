@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://katakana.xyz/</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/blog</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/projects</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/members</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/about</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/contact</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/blog/katakana-%d1%82%d0%b5%d0%bf%d0%b5%d1%80%d1%8c-opensource</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/blog/update-v0-1-1</loc>
+</url>
+<url>
+  <loc>http://katakana.xyz/blog/katakana-version-0-1</loc>
+</url>
+</urlset>
