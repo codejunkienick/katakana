@@ -41,6 +41,15 @@
         "APIPORT": 80
       }
     },
+    "start-test": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production",
+        "PORT": 3000,
+        "APIPORT": 80
+      }
+    },
     "start-dev": {
       "command": "node ./bin/server.js",
       "env": {
