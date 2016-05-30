@@ -61,8 +61,9 @@ class App extends Component {
     const robotoMono = new FontFaceObserver('Roboto Mono');
     const latoBody = new FontFaceObserver('Lato');
     const latoLead = new FontFaceObserver('Lato', {style: 'italic'});
+    const vocalBody = new FontFaceObserver('vocalbold');
 
-    Promise.all([latoBody.load(), latoLead.load()]).then(() => {
+    Promise.all([latoBody.load(), latoLead.load(), vocalBody.load()]).then(() => {
       document.body.className += ' fonts-loaded';
     });
     robotoMono.load().then(() => {
