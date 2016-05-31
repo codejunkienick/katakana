@@ -21,7 +21,7 @@ body.fonts-loaded {
   }
 
   code {
-    font-family: 'Roboto Mono', 'Consolas', monospace;
+    font-family: 'Rot boto Mono', 'Consolas', monospace;
   }
 }
 
@@ -81,6 +81,11 @@ a {
     color: #1c701b;
     border-color: #1c701b;
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 ul,
@@ -167,31 +172,26 @@ code {
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 0px auto 0px auto;
 }
 
 .alignright {
     float:right;
-    margin: 5px 0 20px 20px;
 }
 
 .alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
 }
 
 a img.alignright {
     float: right;
-    margin: 5px 0 20px 20px;
 }
 
 a img.alignnone {
-    margin: 5px 20px 20px 0;
 }
 
 a img.alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
 }
 
 a img.aligncenter {
@@ -209,15 +209,12 @@ a img.aligncenter {
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
 }
 
 .wp-caption img {
