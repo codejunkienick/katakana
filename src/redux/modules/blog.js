@@ -56,7 +56,7 @@ export default function info(state = initialState, action = {}) {
 }
 
 export function isLoaded(globalState) {
-  return globalState.info && globalState.info.loaded;
+  return globalState.blog && globalState.blog.loaded;
 }
 
 export function load() {
