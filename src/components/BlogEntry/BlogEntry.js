@@ -6,6 +6,9 @@ export default class BlogEntry extends Component {
   static defaultProps = {
     single: false 
   }
+  componentDidMount() {
+  
+  }
   render() {
     const styles = require('./BlogEntry.scss');
     const { 

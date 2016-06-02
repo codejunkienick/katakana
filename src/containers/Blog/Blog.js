@@ -11,6 +11,10 @@ import { connect } from 'react-redux';
     loading: state.blog.loading
   }))
 export default class Home extends Component {
+  componentDidMount() {
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+  }
   render() {
     const styles = require('./Blog.scss');
     return (
