@@ -5,7 +5,7 @@ const methods = ['get', 'post', 'put', 'patch', 'del'];
 
 function formatUrl(path) {
   const slashPath = path[0] !== '/' ? '/' + path : path;
-  const adjustedPath = (config.isProduction) ? '/wp/wp-json/wp/v2' + slashPath : '/wp-json/wp/v2' + slashPath;
+  const adjustedPath = '/wp-json/wp/v2' + slashPath;
   if (__SERVER__) {
     // Prepend host and port of the API server to the path.
     return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath;
