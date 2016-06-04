@@ -14,14 +14,16 @@ html {
   box-sizing: inherit;
 }
 body.fonts-loaded {
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Vocal', 'Lato', Helvetica, sans-serif;
+  font-kerning: normal;
 
   h1,h2,h3,h4,h5,h6{
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, serif;
+    font-family: 'Vocal', 'Lato', 'Helvetica Neue', Helvetica, serif;
+    font-kerning: normal;
   }
 
   code {
-    font-family: 'Rot boto Mono', 'Consolas', monospace;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
   }
 }
 
